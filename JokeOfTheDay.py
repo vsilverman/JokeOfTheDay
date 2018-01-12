@@ -1,7 +1,15 @@
+import os
 import random
 
-#read file into list of lines
-text_file = open("jokes.txt", "r")
+filename = "jokes.txt"
+
+# check if file exists
+if (not os.path.exists(filename)):
+	print("file " + filename + " does not exist")
+	quit()
+
+# read file into list of lines
+text_file = open(filename, "r")
 lines = text_file.readlines()
 
 # find the number of lines in file
